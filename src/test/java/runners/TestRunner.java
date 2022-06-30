@@ -4,18 +4,19 @@ package runners;
     import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-    @RunWith(Cucumber.class)
-    @CucumberOptions(
-            plugin={"html:target/cucumber-reports.html",
-                    "json:target/json-reports/cucumber.json",
-                    "junit:target/xml-report/cucumber.xml"
-            },
-            features = "src/test/resources/features",
-            glue="stepDefinitions",
-            tags= "@aut",
-            dryRun = false
-    )
-    public class TestRunner {
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        plugin={"html:target/cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml"
+        },
+        features = "src/test/resources/features",
+        glue="stepdefinitions",
+        tags= "@DBUtils",
+        dryRun = false
+)
+
+public class TestRunner {
     /*
     Bir framework'de bir tek Runner class'i yeterli olabilir
     Runner class'inda class body'sinde hic bir sey olmaz
@@ -29,5 +30,4 @@ import org.junit.runner.RunWith;
    dryRun=true; yazdigimizda Testimizi calistirmadan sadece eksik adimlari bize verir
    deyRun=false yazdigimizda testlerimizi calistirir
      */
-    }
-
+}
